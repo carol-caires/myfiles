@@ -14,7 +14,6 @@
         Dropzone.options.UploadForm = {
             maxFilesize: 5, // MB
             url: 'upload.php',
-            dictDefaultMessage: "Arraste e solte os arquivos aqui!",
             dictFileTooBig: "Arquivo muito grande ({{filesize}}MB) máximo {{maxFilesize}}MB",
             accept: function(file, done){
                 done();
@@ -30,7 +29,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <h3 class="text-info">Upload de arquivos</h3>
                 <form action="upload.php" class="dropzone" id="UploadForm">
+                    <div class="dz-message" data-dz-message><span id="dropzone-label" class="text-info">
+                        Arraste e solte um arquivo para carregar<br>
+                        <small>(ou clique aqui)</small>
+                    </span></div>
                     <div class="fallback">
                         <input name="file" type="file" multiple />
                     </div>
